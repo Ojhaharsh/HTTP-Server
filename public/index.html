@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A lightweight HTTP server built with Node.js. Zero dependencies, maximum performance.">
+    <title>HTTP Server</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">HTTP Server</div>
+                <div class="nav-links">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Live</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-left">
+                    <h1>Simple. Fast. Reliable.</h1>
+                    <p>A lightweight HTTP server built with Node.js. Zero dependencies, maximum performance.</p>
+                    <div class="hero-buttons">
+                        <a href="#demo" class="btn btn-primary">View Demo</a>
+                        <a href="https://github.com" class="btn btn-secondary">GitHub</a>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <strong id="uptime">0s</strong>
+                            <span>Uptime</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>244</strong>
+                            <span>Lines of Code</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>0</strong>
+                            <span>Dependencies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-right">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">terminal</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command">node server.js</span>
+                        </div>
+                        <div class="terminal-output">Static HTTP Server running on http://localhost:8080</div>
+                        <div class="terminal-output">Serving files from: ./public</div>
+                        <div class="terminal-output dim">Press Ctrl+C to stop</div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo-section">
+            <div class="container">
+                <h2>Live Demo</h2>
+                <div class="grid demo-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>HTTP Request</h3>
+                        <span class="badge">GET</span>
+                    </div>
+                    <div class="card-body">
+                        <code>curl http://localhost:8080/</code>
+                        <p>Returns this page (200 OK)</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Static Assets</h3>
+                        <span class="badge">CSS</span>
+                    </div>
+                    <div class="card-body">
+                        <code>curl http://localhost:8080/style.css</code>
+                        <p>Served with proper MIME types</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Caching</h3>
+                        <span class="badge">304</span>
+                    </div>
+                    <div class="card-body">
+                        <code>If-Modified-Since</code>
+                        <p>Efficient conditional requests</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
