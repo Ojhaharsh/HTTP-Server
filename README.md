@@ -86,17 +86,3 @@ docker run -p 8080:8080 -v $(pwd)/public:/app/public static-http-server
 # Or with custom webroot
 docker run -p 8080:8080 -v /path/to/files:/app/public static-http-server
 ```
-
-## Security
-
-- **Directory Traversal Protection**: Requests with `..` are rejected with 403
-- **Path Normalization**: All paths are normalized and validated
-- **Safe URL Decoding**: Handles encoded paths securely
-- **Non-root Container**: Docker container runs as unprivileged user
-
-## Design Decisions
-
-1. **Directory Handling**: Returns 403 Forbidden when directory is requested without `index.html`. This prevents directory listing and provides clear feedback.
-2. **Streaming**: Files are streamed using Node.js streams to avoid loading entire files into memory.
-3. **Logging**: Simple, parseable log format to stdout for easy integration with log aggregators.
-4. **Caching**: 60-second cache with conditional request support balances freshness and performance.
